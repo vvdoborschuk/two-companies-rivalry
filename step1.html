@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Модель конкуренции двух фирм</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,600;1,300;1,600&display=swap');
+
+      body {
+        font-family: 'Open Sans';
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+
+      .remark-code, .remark-inline-code { font-family: 'Fira Code'; }
+
+      @page {
+      size: 1210px 681px;
+      margin: 0;
+      }
+
+    @media print {
+      .remark-slide-scaler {
+        width: 100% !important;
+        height: 100% !important;
+        transform: scale(1) !important;
+        top: 0 !important;
+        left: 0 !important;
+      }
+    }
+
+    .white {
+      color: white;
+    }
+
+    .gray {
+      color: gray;
+    }
+
+    .leftAlign {
+      text-align: left;
+    }
+
+    .headerTmp {
+      background-color: #192a56;
+      color: white;
+    }
+
+    .left-column30 {
+      width: 30%;
+      float: left;
+    }
+
+    .right-column70 {
+      width: 68%;
+      float: right;
+      font-size: 14pt;
+    }
+
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+background-color: #192a56
+
+.white[
+# Модель конкуренции двух фирм
+
+.leftAlign[
+**Доклад подготовили**
+
+- *Доборщук Владимир НФИбд-01-18*
+- *Швец Сергей НФИбд-03-18*
+- *Гурбангельдиев Мухаммет НФИбд-03-18*
+- *Герцев Владлен НФИбд-01-18*]]
+
+---
+
+# Содержание доклада
+
+1. Проблема
+2. Теоретическое описание задачи
+3. Описание модели
+
+---
+
+# Постановка проблемы
+
+Нам необходимо рассмотреть ситуацию, где имеются две конкурирующие фирмы и построить модель их развития.
+
+### Проблема
+
+> Прогнозирование хода конкуренции двух фирм, на основе математических зависимостей факторов производства и деятельности фирм.
+
+---
+
+.left-column30[
+## Описание задачи
+]
+
+.right-column70[### Вывести математический вид и программно реализовать модель конкуренции двух фирм
+
+Для реализации этой задачи необходимо рассмотреть сначала модель одной фирмы. Для прогнозирования нам необходимы следующие факторы одной фирмы:
+
+- `\(N\)` - число потребителей производимого продукта;
+- `\(S\)` - доходы потребителей данного продукта (возьмем за основу, что доходу у всех равны, поскольку производимый продукт находится в одной рыночной нише);
+- `\(M\)` - оборотные средства предприятия;
+- `\(\tau\)` - длительность производственного цикла;
+- `\(p\)` - рыночная цена товара;
+- `\(\widetilde{p}\)` - себестоимость товара;
+- `\(\delta\)` - доля оборотных средств, идущая на покрытие переменных издержек;
+- `\(\kappa\)` - постоянные издерки, которые не зависят от количества выпускаемой продукции.
+]
+
+---
+
+.left-column30[
+## .gray[Описание задачи]
+
+## Описание модели
+]
+
+.right-column70[
+Воспользуемся простейшей формой функции спроса, зависящей от отношения дохода `\(S\)` к цене `\(p\)`:
+
+$$
+\begin{equation}
+  Q = q - k\frac{p}{S} = q\left(1-\frac{p}{p_{cr}}\right)
+\end{equation},
+$$
+
+где
+
+- `\(q\)` - максимальная потребность одного человека в продукте в единицу времени;
+- `\(k\)` - мера эластичности функции спроса по цене;
+- `\(p_{cr} = \frac{Sq}{k}\)` - критическая стоимость продукта;
+
+Данная функция падает с ростом цены и при `\(p = p_{cr}\)` потребители отказываются от приобретения товара. Таким образом, функция спроса является пороговой (то есть, `\(Q(S/p) = 0\)` при `\(p \geqslant p_{cr}\)`) и обладает свойствами насыщения.
+
+
+]
+
+
+---
+
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML&delayStartupUntil=configured" type="text/javascript"></script>
+    <script>
+      var slideshow = remark.create({
+        highlightStyle: 'dracula',
+        highlightLanguage: 'markdown',
+        highlightLines: true
+      });
+
+      MathJax.Hub.Config({
+        tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+        }
+      });
+
+      MathJax.Hub.Configured();
+    </script>
+  </body>
+</html>
